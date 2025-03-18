@@ -62,7 +62,7 @@ public class LoginController {
 
     public void onRegisterLabelClick(javafx.scene.input.MouseEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/loginregister/register-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pro_virtual_music/register-view.fxml"));
             Parent root = loader.load();
 
             Stage currentStage = (Stage) registerLabel.getScene().getWindow();
@@ -73,6 +73,8 @@ public class LoginController {
     }
 
     public void onRegisterButtonClick(ActionEvent event) {
+
+        //Kiểm tra người dùng đã nhập đủ thông tin hay chưa
         if( firstnameTextField.getText().isBlank() ||
             lastnameTextField.getText().isBlank() ||
             registerUsenameField.getText().isBlank() ||
@@ -89,6 +91,7 @@ public class LoginController {
         String insertQuery = "INSERT INTO user_data (firstname, lastname, username, password) VALUES (?,?,?,?)";
 
         try {
+            //Kiểm tra lỗi trùng Username
             PreparedStatement checkStatement = connectDB.prepareStatement(checkIfExitedUser);
             checkStatement.setString(1, registerUsenameField.getText());
             ResultSet queryResult = checkStatement.executeQuery();
@@ -98,28 +101,42 @@ public class LoginController {
                     return;
                 }
             }
-            /*
-                - kiểm tra password trùng với confirmpassword
-                - thêm người dùng vào data base
-             */
-            registerMessageLabel.setText("You try to register!");
+            //Kiểm tra password trùng với confirmpassword
+            if(!registerPasswordField.getText().equals(confirmPasswordField.getText())){
+                registerMessageLabel.setText("Your password dont match. Try again!");
+                return;
+            }
+            //Thêm người dùng vào data base
+            PreparedStatement insertStatement = connectDB.prepareStatement(insertQuery);
+            insertStatement.setString(1, firstnameTextField.getText());
+            insertStatement.setString(2, lastnameTextField.getText());
+            insertStatement.setString(3, registerUsenameField.getText());
+            insertStatement.setString(4, registerPasswordField.getText());
+            insertStatement.executeUpdate();
+
+            registerMessageLabel.setText("You have successfully registered.");
         } catch(Exception e) {
             e.printStackTrace();
         }
     }
 
-    public void cancelRegisterButtonClick(ActionEvent event) {
+    public void backtoLoginScene(String message) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/loginregister/login-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pro_virtual_music/login-view.fxml"));
             Parent root = loader.load();
 
             Stage currentStage = (Stage) cancelRegisterButton.getScene().getWindow();
             currentStage.setScene(new Scene(root));
+            loginMessageLabel.setText(message);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    //SubFunctions
+
+    public void cancelRegisterButtonClick(ActionEvent event) {
+        backtoLoginScene("");
+    }
+
     public void validateLogin() {
         DatabaseConection connectNow = new DatabaseConection();
         Connection connectDB = connectNow.getConnection();
@@ -134,8 +151,13 @@ public class LoginController {
 
             while(queryResult.next()) {
                 if(queryResult.getInt(1) == 1) {
-                    loginMessageLabel.setText("You login!");
-                    //Chuyển thành màn hình chính
+//                  loginMessageLabel.setText("You login!");
+
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/pro_virtual_music/menu-view.fxml"));
+                    Parent root = loader.load();
+
+                    Stage currentStage = (Stage) loginButton.getScene().getWindow();
+                    currentStage.setScene(new Scene(root));
                 } else {
                     loginMessageLabel.setText("Invalid loin! Try again!");
                 }
