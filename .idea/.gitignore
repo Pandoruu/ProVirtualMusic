@@ -1,0 +1,43 @@
+# IntelliJ IDEA
+/.idea/
+*.iml
+/workspace.xml
+/shelf/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# NetBeans
+nbproject/private/
+
+# Build output directories
+/build/
+out/
+target/
+bin/
+
+# Java compiled files
+*.class
+*.jar
+*.war
+*.ear
+
+# Maven Wrapper
+/.mvn/
+mvnw
+mvnw.cmd
+
+# Editor-based HTTP Client requests
+/httpRequests/
+
+# Datasource local storage
+/dataSources/
+dataSources.local.xml
+
+# System files
+*.log
+*.tmp
+.DS_Store
+Thumbs.db

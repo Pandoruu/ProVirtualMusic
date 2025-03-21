@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane fx:id="borderPane" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pro_virtual_music.controller.PianoController">
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="900.0" style="-fx-background-color: #FFF8DC;">
+         <HBox layoutY="100.0" prefHeight="100.0" prefWidth="900.0" style="-fx-alignment: center;">
+            <children>
+                <!-- Hộp chứa tất cả các phím đàn -->
+                <Pane prefHeight="150.0" prefWidth="840.0">
+            
+                    <!-- Các phím trắng -->
+                    <Button fx:id="c3" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="1.0" layoutY="50.0" prefHeight="150" prefWidth="40" style="-fx-background-color: white; -fx-border-color: black; -fx-content-display: bottom;" text="Đô" />
+                    <Button fx:id="d3" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="40" layoutY="50" prefHeight="150" prefWidth="40" style="-fx-background-color: white; -fx-border-color: black; -fx-content-display: bottom;" text="Rê" />
+                    <Button fx:id="e3" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="80" layoutY="50" prefHeight="150" prefWidth="40" style="-fx-background-color: white; -fx-border-color: black; -fx-content-display: bottom;" text="Mi" />
+                    <Button fx:id="f3" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="120" layoutY="50" prefHeight="150" prefWidth="40" style="-fx-background-color: white; -fx-border-color: black; -fx-content-display: bottom;" text="Fa" />
+                    <Button fx:id="g3" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="160" layoutY="50" prefHeight="150" prefWidth="40" style="-fx-background-color: white; -fx-border-color: black; -fx-content-display: bottom;" text="Sol" />
+                    <Button fx:id="a3" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="200" layoutY="50" prefHeight="150" prefWidth="40" style="-fx-background-color: white; -fx-border-color: black; -fx-content-display: bottom;" text="La" />
+                    <Button fx:id="b3" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="240" layoutY="50" prefHeight="150" prefWidth="40" style="-fx-background-color: white; -fx-border-color: black; -fx-content-display: bottom;" text="Si" />
+            
+                    <Button fx:id="c4" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="280" layoutY="50" prefHeight="150" prefWidth="40" style="-fx-background-color: white; -fx-border-color: black; -fx-content-display: bottom;" text="Đô" />
+                    <Button fx:id="d4" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="320" layoutY="50" prefHeight="150" prefWidth="40" style="-fx-background-color: white; -fx-border-color: black; -fx-content-display: bottom;" text="Rê" />
+                    <Button fx:id="e4" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="360" layoutY="50" prefHeight="150" prefWidth="40" style="-fx-background-color: white; -fx-border-color: black; -fx-content-display: bottom;" text="Mi" />
+                    <Button fx:id="f4" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="400" layoutY="50" prefHeight="150" prefWidth="40" style="-fx-background-color: white; -fx-border-color: black; -fx-content-display: bottom;" text="Fa" />
+                    <Button fx:id="g4" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="440" layoutY="50" prefHeight="150" prefWidth="40" style="-fx-background-color: white; -fx-border-color: black; -fx-content-display: bottom;" text="Sol" />
+                    <Button fx:id="a4" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="480" layoutY="50" prefHeight="150" prefWidth="40" style="-fx-background-color: white; -fx-border-color: black; -fx-content-display: bottom;" text="La" />
+                    <Button fx:id="b4" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="520" layoutY="50" prefHeight="150" prefWidth="40" style="-fx-background-color: white; -fx-border-color: black; -fx-content-display: bottom;" text="Si" />
+            
+                    <Button fx:id="c5" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="560" layoutY="50" prefHeight="150" prefWidth="40" style="-fx-background-color: white; -fx-border-color: black; -fx-content-display: bottom;" text="Đô" />
+                    <Button fx:id="d5" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="600" layoutY="50" prefHeight="150" prefWidth="40" style="-fx-background-color: white; -fx-border-color: black; -fx-content-display: bottom;" text="Rê" />
+                    <Button fx:id="e5" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="640" layoutY="50" prefHeight="150" prefWidth="40" style="-fx-background-color: white; -fx-border-color: black; -fx-content-display: bottom;" text="Mi" />
+                    <Button fx:id="f5" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="680" layoutY="50" prefHeight="150" prefWidth="40" style="-fx-background-color: white; -fx-border-color: black; -fx-content-display: bottom;" text="Fa" />
+                    <Button fx:id="g5" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="720" layoutY="50" prefHeight="150" prefWidth="40" style="-fx-background-color: white; -fx-border-color: black; -fx-content-display: bottom;" text="Sol" />
+                    <Button fx:id="a5" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="760" layoutY="50" prefHeight="150" prefWidth="40" style="-fx-background-color: white; -fx-border-color: black; -fx-content-display: bottom;" text="La" />
+                    <Button fx:id="b5" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="800" layoutY="50" prefHeight="150" prefWidth="40" style="-fx-background-color: white; -fx-border-color: black; -fx-content-display: bottom;" text="Si" />
+            
+                    <!-- Các phím đen: nhóm 2-3-2-3-2-3 -->
+                    <Button fx:id="cs3" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="28.0" layoutY="50.0" prefHeight="100" prefWidth="30" style="-fx-background-color: black; -fx-text-fill: white;" text="Đô#" />
+                    <Button fx:id="ds3" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="68.0" layoutY="50.0" prefHeight="100" prefWidth="30" style="-fx-background-color: black; -fx-text-fill: white;" text="Rê#" />
+            
+                    <Button fx:id="fs3" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="148.0" layoutY="50.0" prefHeight="100" prefWidth="30" style="-fx-background-color: black; -fx-text-fill: white;" text="Fa#" />
+                    <Button fx:id="gs3" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="188.0" layoutY="50.0" prefHeight="100" prefWidth="30" style="-fx-background-color: black; -fx-text-fill: white;" text="Sol#" />
+                    <Button fx:id="as3" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="228.0" layoutY="50.0" prefHeight="100" prefWidth="30" style="-fx-background-color: black; -fx-text-fill: white;" text="La#" />
+            
+                    <Button fx:id="cs4" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="308.0" layoutY="50.0" prefHeight="100" prefWidth="30" style="-fx-background-color: black; -fx-text-fill: white;" text="Đô#" />
+                    <Button fx:id="ds4" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="348.0" layoutY="50.0" prefHeight="100" prefWidth="30" style="-fx-background-color: black; -fx-text-fill: white;" text="Rê#" />
+            
+                    <Button fx:id="fs4" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="428.0" layoutY="50.0" prefHeight="100" prefWidth="30" style="-fx-background-color: black; -fx-text-fill: white;" text="Fa#" />
+                    <Button fx:id="gs4" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="468.0" layoutY="50.0" prefHeight="100" prefWidth="30" style="-fx-background-color: black; -fx-text-fill: white;" text="Sol#" />
+                    <Button fx:id="as4" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="508.0" layoutY="50.0" prefHeight="100" prefWidth="30" style="-fx-background-color: black; -fx-text-fill: white;" text="La#" />
+            
+                    <Button fx:id="cs5" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="588.0" layoutY="50.0" prefHeight="100" prefWidth="30" style="-fx-background-color: black; -fx-text-fill: white;" text="Đô#" />
+                    <Button fx:id="ds5" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="628.0" layoutY="50.0" prefHeight="100" prefWidth="30" style="-fx-background-color: black; -fx-text-fill: white;" text="Rê#" />
+                    <Button fx:id="fs5" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="708.0" layoutY="50.0" prefHeight="100" prefWidth="30" style="-fx-background-color: black; -fx-text-fill: white;" text="Fa#" />
+                    <Button fx:id="gs5" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="748.0" layoutY="50.0" prefHeight="100" prefWidth="30" style="-fx-background-color: black; -fx-text-fill: white;" text="Sol#" />
+                    <Button fx:id="as5" alignment="BOTTOM_CENTER" contentDisplay="TOP" layoutX="788.0" layoutY="50.0" prefHeight="100" prefWidth="30" style="-fx-background-color: black; -fx-text-fill: white;" text="La#" />
+                </Pane>
+            </children>
+         </HBox>
+      
+      </AnchorPane>
+   </center>
+   <top>
+      <AnchorPane prefHeight="200.0" prefWidth="900.0" style="-fx-background-color: #ccb06a;" BorderPane.alignment="CENTER">
+      </AnchorPane>
+   </top>
+</BorderPane>
