@@ -1,16 +1,15 @@
 package com.example.pro_virtual_music.controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.media.AudioClip;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-
-import java.net.URL;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.BorderPane;
+import com.example.pro_virtual_music.Model.*;
 
 public class PianoController {
-/*
+    @FXML
+    private BorderPane borderPane;
+
     @FXML
     private Button a3;
 
@@ -118,17 +117,33 @@ public class PianoController {
 
     @FXML
     private Button gs5;
-*/
+
+    private final AudioModel audioModel = new AudioModel();
+
     @FXML
-    void play(ActionEvent event) {
-        Button button = (Button) event.getSource();
-        String buttonID = button.getId();
-        URL path = this.getClass().getResource("/com/example/pro_virtual_music/Audio/" + buttonID + ".mp3");
-        if(path == null){
-            System.out.println("File " + buttonID + " not found!");
-            return;
+    public void initialize() {
+        Button[] keys = {a3, a4, a5, as3, as4, as5,
+                b3, b4, b5, c3, c4, c5,
+                cs3, cs4, cs5, d3, d4, d5,
+                ds3, ds4, ds5, e3, e4, e5,
+                f3, f4, f5, fs3, fs4, fs5,
+                g3, g4, g5, gs3, gs4, gs5};
+
+        for (Button key : keys) {
+            if (key != null) {
+                key.setOnAction(_ -> audioModel.play(key.getId()));
+            }
         }
-        AudioClip note = new AudioClip(path.toString());
-        note.play();
+
+        audioModel.loadSound();
+        borderPane.getCenter().setOnKeyPressed(this::keyPress);
     }
+
+    public void keyPress(KeyEvent event) {
+        String key = event.getText();
+        if(audioModel.soundMap.containsKey(key)) {
+            audioModel.soundMap.get(key).play();
+        }
+    }
+
 }
